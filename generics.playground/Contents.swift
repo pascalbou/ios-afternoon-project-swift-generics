@@ -15,7 +15,6 @@ struct CountedSet<Element: Hashable> {
     }
     
     mutating func remove(_ element: Element) -> Int {
-//        guard !elements.isEmpty else { return nil }
         guard let index = elements.firstIndex(of: element) else { return 0 }
         elements.remove(at: index)
         counts[element] = counts[element]! - 1
@@ -23,7 +22,6 @@ struct CountedSet<Element: Hashable> {
     }
     
     subscript(_ member: Element) -> Int {
-//        return elements.firstIndex(of: member) ?? 0
         let result = count(member)
         return result
     }
@@ -55,7 +53,6 @@ enum Arrow {
 var aCountedSet = CountedSet<Arrow>()
 aCountedSet[.iron]
 var myCountedSet: CountedSet<Arrow> = [.iron, .magic, .iron, .silver, .iron, .iron]
-//var myCountedSet = CountedSet<Arrow>()
 myCountedSet
 myCountedSet[.iron]
 myCountedSet.remove(.iron)
